@@ -7,65 +7,23 @@ Fabric Loom: 1.14.10
 Cannot remap modifiers because it does not exists in any of the targets [] or their parents.
 
 > Task :compileJava
-/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/replay/ExportManager.java:291: error: incompatible types: INT#1 cannot be converted to boolean
-            boolean ok = jpeg ? STBImageWrite.stbi_write_jpg_to_func(cb, 0L, w, h, 3, buf, quality)
-                              ^
-  where INT#1,INT#2 are intersection types:
-    INT#1 extends Object,Serializable,Comparable<? extends INT#2>,Constable
-    INT#2 extends Object,Serializable,Comparable<?>,Constable
-/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
-            if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
-                                        ^
-  symbol:   method getPos()
-  location: variable self of type Camera
-/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
-            if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
-                                                         ^
-  symbol:   method getPos()
-  location: variable self of type Camera
-/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
-            if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
-                                                                          ^
-  symbol:   method getPos()
-  location: variable self of type Camera
-4 errors
+> Task :processResources
+> Task :classes
+> Task :jar
+> Task :processIncludeJars
+> Task :sourcesJar
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :validateAccessWidener NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :remapJar
+> Task :remapSourcesJar
+> Task :assemble
+> Task :build
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/build-1794659496564.json
 
-> Task :compileJava FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/build-1794659415913.json
-
-[Incubating] Problems report is available at: file:///home/runner/work/Flashback/Flashback/build/reports/problems/problems-report.html
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':compileJava'.
-> Compilation failed; see the compiler output below.
-  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/replay/ExportManager.java:291: error: incompatible types: INT#1 cannot be converted to boolean
-              boolean ok = jpeg ? STBImageWrite.stbi_write_jpg_to_func(cb, 0L, w, h, 3, buf, quality)
-                                ^
-    where INT#1,INT#2 are intersection types:
-      INT#1 extends Object,Serializable,Comparable<? extends INT#2>,Constable
-      INT#2 extends Object,Serializable,Comparable<?>,Constable
-  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
-              if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
-                                          ^
-    symbol:   method getPos()
-    location: variable self of type Camera
-  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
-              if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
-                                                           ^
-    symbol:   method getPos()
-    location: variable self of type Camera
-  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
-              if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
-                                                                            ^
-    symbol:   method getPos()
-    location: variable self of type Camera
-  4 errors
-
-* Try:
-> Check your code and dependencies to fix the compilation error(s)
-> Run with --scan to generate a Build Scan (powered by Develocity).
-
-BUILD FAILED in 17s
-1 actionable task: 1 executed
+BUILD SUCCESSFUL in 24s
+7 actionable tasks: 7 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.2.1/userguide/configuration_cache_enabling.html
