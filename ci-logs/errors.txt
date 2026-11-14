@@ -1,0 +1,55 @@
+10:/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/replay/ExportManager.java:291: error: incompatible types: INT#1 cannot be converted to boolean
+11-            boolean ok = jpeg ? STBImageWrite.stbi_write_jpg_to_func(cb, 0L, w, h, 3, buf, quality)
+12-                              ^
+13-  where INT#1,INT#2 are intersection types:
+14-    INT#1 extends Object,Serializable,Comparable<? extends INT#2>,Constable
+--
+16:/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
+17-            if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
+18-                                        ^
+19-  symbol:   method getPos()
+20-  location: variable self of type Camera
+21:/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
+22-            if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
+23-                                                         ^
+24-  symbol:   method getPos()
+25-  location: variable self of type Camera
+26:/home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
+27-            if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
+28-                                                                          ^
+29-  symbol:   method getPos()
+30-  location: variable self of type Camera
+--
+33:> Task :compileJava FAILED
+34-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/build-1794659415913.json
+35-
+36-[Incubating] Problems report is available at: file:///home/runner/work/Flashback/Flashback/build/reports/problems/problems-report.html
+37-
+--
+40:* What went wrong:
+41-Execution failed for task ':compileJava'.
+42-> Compilation failed; see the compiler output below.
+43:  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/replay/ExportManager.java:291: error: incompatible types: INT#1 cannot be converted to boolean
+44-              boolean ok = jpeg ? STBImageWrite.stbi_write_jpg_to_func(cb, 0L, w, h, 3, buf, quality)
+45-                                ^
+46-    where INT#1,INT#2 are intersection types:
+47-      INT#1 extends Object,Serializable,Comparable<? extends INT#2>,Constable
+--
+49:  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
+50-              if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
+51-                                          ^
+52-    symbol:   method getPos()
+53-    location: variable self of type Camera
+54:  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
+55-              if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
+56-                                                           ^
+57-    symbol:   method getPos()
+58-    location: variable self of type Camera
+59:  /home/runner/work/Flashback/Flashback/src/main/java/dev/flashback/mixin/CameraMixin.java:22: error: cannot find symbol
+60-              if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
+61-                                                                            ^
+62-    symbol:   method getPos()
+63-    location: variable self of type Camera
+--
+70:BUILD FAILED in 17s
+71-1 actionable task: 1 executed
