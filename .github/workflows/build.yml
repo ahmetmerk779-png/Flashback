@@ -38,4 +38,13 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Flashback-jar
-          path: build/libs/*.jar
+          path: build/libs/flashback-1.0.0.jar
+      - name: Release olustur
+        if: steps.build.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "build-${{ github.run_number }}" build/libs/flashback-1.0.0.jar \
+            --title "Flashback build ${{ github.run_number }}" \
+            --notes "Otomatik derleme. Jar dosyasini indirip mods klasorune at (Fabric API gerekir)." \
+            --latest
