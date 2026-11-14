@@ -19,7 +19,11 @@ public abstract class CameraMixin {
         Camera self = (Camera) (Object) this;
         if (ReplayManager.freecamActive()) {
             var fc = ReplayManager.freecam;
-            if (!fc.inited) fc.init(self.getPos().x, self.getPos().y, self.getPos().z, self.getYaw(), self.getPitch());
+            if (!fc.inited) {
+                var pl = net.minecraft.client.MinecraftClient.getInstance().player;
+                if (pl != null) fc.init(pl.getX(), pl.getEyeY(), pl.getZ(), pl.getYaw(), pl.getPitch());
+                else fc.init(0, 0, 0, 0, 0);
+            }
             fc.frame();
             setRotation(fc.yaw, fc.pitch);
             setPos(fc.x, fc.y, fc.z);

@@ -288,8 +288,8 @@ public final class ExportManager {
         ByteBuffer buf = MemoryUtil.memAlloc(rgb.length);
         try {
             buf.put(rgb).flip();
-            boolean ok = jpeg ? STBImageWrite.stbi_write_jpg_to_func(cb, 0L, w, h, 3, buf, quality)
-                              : STBImageWrite.stbi_write_png_to_func(cb, 0L, w, h, 3, buf, w * 3);
+            boolean ok = jpeg ? asBool(STBImageWrite.stbi_write_jpg_to_func(cb, 0L, w, h, 3, buf, quality))
+                              : asBool(STBImageWrite.stbi_write_png_to_func(cb, 0L, w, h, 3, buf, w * 3));
             if (!ok) throw new IllegalStateException("Kare kodlanamadı");
         } finally {
             cb.free();
@@ -297,6 +297,9 @@ public final class ExportManager {
         }
         return bo.toByteArray();
     }
+
+    private static boolean asBool(boolean b) { return b; }
+    private static boolean asBool(int i) { return i != 0; }
 
     // ---------------- bitiş / iptal ----------------
     private static void finish(MinecraftClient mc) {
