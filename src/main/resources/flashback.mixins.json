@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.flashback.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ClientConnectionMixin",
+    "ClientConnectionAccessor",
+    "CameraMixin",
+    "EntityMixin",
+    "WindowMixin",
+    "GameRendererMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

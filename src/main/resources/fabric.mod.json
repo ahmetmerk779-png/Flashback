@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "flashback",
+  "version": "${version}",
+  "name": "Flashback",
+  "description": "Oyun oturumlarını kaydet ve serbest kamerayla, zaman çizelgesiyle ve kamera yoluyla yeniden izle.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["dev.flashback.FlashbackMod"] },
+  "mixins": ["flashback.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

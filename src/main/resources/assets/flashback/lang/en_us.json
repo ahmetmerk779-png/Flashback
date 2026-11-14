@@ -1,0 +1,10 @@
+{
+  "key.category.flashback.main": "Flashback",
+  "key.flashback.list": "Open Replay Browser",
+  "key.flashback.controls": "Replay Controls",
+  "key.flashback.marker": "Add Marker (recording)",
+  "key.flashback.record": "Start / Stop Recording",
+  "key.flashback.pause": "Pause / Resume Replay",
+  "key.flashback.keyframe": "Add Camera Keyframe",
+  "key.flashback.path": "Play / Stop Camera Path"
+}
