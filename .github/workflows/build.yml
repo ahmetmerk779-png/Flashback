@@ -1,10 +1,10 @@
 name: Build
-
 on:
   push:
-  pull_request:
+    branches: [main]
   workflow_dispatch:
-
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +18,23 @@ jobs:
         with:
           gradle-version: 9.2.1
       - name: Build
-        run: gradle build --no-daemon
+        id: build
+        continue-on-error: true
+        run: gradle build --no-daemon --console=plain > build.log 2>&1
+      - name: Save log to repo
+        if: always()
+        run: |
+          mkdir -p ci-logs
+          grep -n -E "error:|What went wrong|Could not|FAILED|BUILD|warning: \[" -A4 build.log | head -400 > ci-logs/errors.txt || true
+          tail -n 120 build.log > ci-logs/tail.txt
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git add ci-logs
+          git commit -m "ci: build log" || true
+          git push || true
+      - name: Fail if build failed
+        if: steps.build.outcome == 'failure'
+        run: exit 1
       - uses: actions/upload-artifact@v4
         with:
           name: Flashback-jar
